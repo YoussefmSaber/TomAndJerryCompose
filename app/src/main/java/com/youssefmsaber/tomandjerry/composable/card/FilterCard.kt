@@ -1,4 +1,4 @@
-package com.youssefmsaber.tomandjerry.composable.button
+package com.youssefmsaber.tomandjerry.composable.card
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,16 +13,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.youssefmsaber.tomandjerry.R
+import com.youssefmsaber.tomandjerry.ui.theme.Elevation0
 import com.youssefmsaber.tomandjerry.ui.theme.Padding12
 import com.youssefmsaber.tomandjerry.ui.theme.PrimaryColor
 import com.youssefmsaber.tomandjerry.ui.theme.Radius12
 
 @Composable
-fun FilterButton(modifier: Modifier = Modifier) {
+fun FilterCard(modifier: Modifier = Modifier) {
     Card(
         colors = CardDefaults.cardColors(containerColor = PrimaryColor),
         shape = RoundedCornerShape(Radius12),
         modifier = modifier.size(48.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = Elevation0)
     ) {
         Image(
             painter = painterResource(R.drawable.filter_horizontal_icon),
@@ -36,6 +38,6 @@ fun FilterButton(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-fun FilterButtonPreview() {
-    FilterButton()
+fun FilterCardPreview() {
+    FilterCard()
 }
