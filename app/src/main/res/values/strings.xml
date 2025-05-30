@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TomAndJerry</string>
+    <string name="search_hint">Search about tom …</string>
 </resources>
