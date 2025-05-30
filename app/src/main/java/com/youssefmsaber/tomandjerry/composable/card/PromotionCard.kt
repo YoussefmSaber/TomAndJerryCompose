@@ -37,6 +37,7 @@ import com.youssefmsaber.tomandjerry.ui.theme.LinearGradientTomPromotion
 import com.youssefmsaber.tomandjerry.ui.theme.OffWhiteTextColor
 import com.youssefmsaber.tomandjerry.ui.theme.Padding12
 import com.youssefmsaber.tomandjerry.ui.theme.Radius16
+import com.youssefmsaber.tomandjerry.ui.theme.VeryLightWhite
 
 @SuppressLint("UnrememberedMutableState")
 @Composable
@@ -77,13 +78,13 @@ fun PromotionCard(
 
                 Canvas(modifier = Modifier.matchParentSize()) {
                     drawCircle(
-                        color = Color.White.copy(alpha = 0.04f),
+                        color = VeryLightWhite,
                         radius = 200f,
                         center = Offset(size.width * 0.95f, size.height * 0.7f)
                     )
 
                     drawCircle(
-                        color = Color.White.copy(alpha = 0.04f),
+                        color = VeryLightWhite,
                         radius = 180f,
                         center = Offset(size.width * 0.95f, size.height * 0.7f)
                     )
