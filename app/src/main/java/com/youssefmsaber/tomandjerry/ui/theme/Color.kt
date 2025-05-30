@@ -20,5 +20,4 @@ val GrayBorderColor = Color(0x261F1F1E)
 val PriceContainerColor = Color(0xFFE9F6FB)
 val OffWhiteTextColor = Color(0xCCFFFFFF)
 
-
-val VeryLightWhite = Color(0x0AFFFFFF)
+val LinearGradientTomPromotion = listOf(Color(0xff03446A), Color(0xFF0685D0))

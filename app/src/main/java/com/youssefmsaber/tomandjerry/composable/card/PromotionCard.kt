@@ -1,6 +1,7 @@
 package com.youssefmsaber.tomandjerry.composable.card
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -12,8 +13,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -34,11 +33,10 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import com.youssefmsaber.tomandjerry.R
 import com.youssefmsaber.tomandjerry.composable.spacer.VerticalSpacer8
 import com.youssefmsaber.tomandjerry.ui.theme.IBM_Plex
+import com.youssefmsaber.tomandjerry.ui.theme.LinearGradientTomPromotion
 import com.youssefmsaber.tomandjerry.ui.theme.OffWhiteTextColor
 import com.youssefmsaber.tomandjerry.ui.theme.Padding12
-import com.youssefmsaber.tomandjerry.ui.theme.PrimaryColor
 import com.youssefmsaber.tomandjerry.ui.theme.Radius16
-import com.youssefmsaber.tomandjerry.ui.theme.VeryLightWhite
 
 @SuppressLint("UnrememberedMutableState")
 @Composable
@@ -67,37 +65,29 @@ fun PromotionCard(
                 modifier = modifier
                     .background(
                         brush = Brush.linearGradient(
-                            colors = listOf(PrimaryColor, Color(0xFF0685D0)),
+                            colors = LinearGradientTomPromotion,
                             start = Offset.Zero,
-                            end = Offset(widthPx * 2, heightPx)
+                            end = Offset(widthPx, heightPx)
                         )
                     )
                     .fillMaxSize()
             ) {
-                ConstraintLayout(
-                    modifier = modifier.fillMaxWidth()
-                ) {
-                    val (first, second) = createRefs()
-                    LightWhiteCircle(
-                        modifier
-                            .size(140.dp)
-                            .constrainAs(first) {
-                                bottom.linkTo(parent.bottom, margin = (-8).dp)
-                                end.linkTo(parent.end, margin = (-48).dp)
-                            }
-                    )
-                    LightWhiteCircle(
-                        modifier
-                            .size(130.dp)
-                            .constrainAs(second) {
-                                bottom.linkTo(parent.bottom, margin = (-8).dp)
-                                end.linkTo(parent.end, margin = (-46).dp)
-                            }
-                    )
-                }
+
                 PromotionText(modifier)
 
+                Canvas(modifier = Modifier.matchParentSize()) {
+                    drawCircle(
+                        color = Color.White.copy(alpha = 0.04f),
+                        radius = 200f,
+                        center = Offset(size.width * 0.95f, size.height * 0.7f)
+                    )
 
+                    drawCircle(
+                        color = Color.White.copy(alpha = 0.04f),
+                        radius = 180f,
+                        center = Offset(size.width * 0.95f, size.height * 0.7f)
+                    )
+                }
             }
         }
 
@@ -108,15 +98,6 @@ fun PromotionCard(
             bottom.linkTo(parent.bottom)
         })
     }
-}
-
-@Composable
-fun LightWhiteCircle(modifier: Modifier = Modifier) {
-    Box(
-        modifier = modifier
-            .clip(CircleShape)
-            .background(VeryLightWhite)
-    )
 }
 
 @Composable
