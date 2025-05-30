@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.youssefmsaber.tomandjerry.R
+import com.youssefmsaber.tomandjerry.ui.theme.Elevation0
 import com.youssefmsaber.tomandjerry.ui.theme.GrayBorderColor
 import com.youssefmsaber.tomandjerry.ui.theme.OffsetNegative4
 import com.youssefmsaber.tomandjerry.ui.theme.Padding8
@@ -42,7 +43,8 @@ fun NotificationCard(
             colors = CardDefaults.cardColors(
                 containerColor = Color.Transparent
             ),
-            border = BorderStroke(width = StrokeWidth1, color = GrayBorderColor)
+            border = BorderStroke(width = StrokeWidth1, color = GrayBorderColor),
+            elevation = CardDefaults.cardElevation(defaultElevation = Elevation0)
         ) {
             Icon(
                 painter = painterResource(R.drawable.notification_icon),
