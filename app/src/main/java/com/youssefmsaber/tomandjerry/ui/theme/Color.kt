@@ -19,3 +19,6 @@ val SubHeaderTextColor = Color(0xFFA5A6A4)
 val GrayBorderColor = Color(0x261F1F1E)
 val PriceContainerColor = Color(0xFFE9F6FB)
 val OffWhiteTextColor = Color(0xCCFFFFFF)
+
+
+val VeryLightWhite = Color(0x0AFFFFFF)
