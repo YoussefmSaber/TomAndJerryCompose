@@ -17,10 +17,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.youssefmsaber.tomandjerry.R
 import com.youssefmsaber.tomandjerry.composable.spacer.HorizontalSpacer8
+import com.youssefmsaber.tomandjerry.ui.theme.IBM_Plex
 import com.youssefmsaber.tomandjerry.ui.theme.LightGrayColor
 import com.youssefmsaber.tomandjerry.ui.theme.Padding8
 import com.youssefmsaber.tomandjerry.ui.theme.Radius12
@@ -51,7 +55,12 @@ fun SearchCard(
             HorizontalSpacer8()
             Text(
                 text = stringResource(R.string.search_hint),
-                color = LightGrayColor
+                style = TextStyle(
+                    color = LightGrayColor,
+                    fontSize = 14.sp,
+                    fontFamily = IBM_Plex,
+                    fontWeight = FontWeight.Normal
+                )
             )
         }
     }

@@ -1,5 +1,6 @@
 package com.youssefmsaber.tomandjerry.composable.card
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -15,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
@@ -22,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.youssefmsaber.tomandjerry.R
 import com.youssefmsaber.tomandjerry.composable.spacer.HorizontalSpacer4
+import com.youssefmsaber.tomandjerry.ui.theme.IBM_Plex
 import com.youssefmsaber.tomandjerry.ui.theme.Padding8
 import com.youssefmsaber.tomandjerry.ui.theme.PriceContainerColor
 import com.youssefmsaber.tomandjerry.ui.theme.PrimaryColor
@@ -34,7 +37,13 @@ fun PriceCard(
     modifier: Modifier = Modifier
 ) {
     val price = buildAnnotatedString {
-        withStyle(style = SpanStyle(fontSize = 12.sp)) {
+        withStyle(
+            style = SpanStyle(
+                fontSize = 12.sp,
+                fontFamily = IBM_Plex,
+                fontWeight = FontWeight.Medium
+            )
+        ) {
             if (newPrice.isNotBlank()) {
                 withStyle(
                     style = SpanStyle(
@@ -63,7 +72,8 @@ fun PriceCard(
     ) {
         Row(
             modifier = modifier.padding(Padding8),
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
         ) {
             Icon(
                 painter = painterResource(R.drawable.money_bag_icon),
