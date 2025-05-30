@@ -4,6 +4,7 @@ import androidx.compose.ui.unit.dp
 
 val Padding4 = 4.dp
 val Padding8 = 8.dp
+val Padding12 = 12.dp
 val Padding16 = 16.dp
 
 val StrokeWidth1 = 1.dp
