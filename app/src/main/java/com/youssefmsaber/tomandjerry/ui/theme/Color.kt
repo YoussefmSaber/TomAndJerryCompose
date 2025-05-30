@@ -14,7 +14,7 @@ val PrimaryColor = Color(0xFF03578A)
 val BackgroundColor = Color(0xFFEEF4F6)
 
 val DarkGrayTextColor = Color(0xFF1F1F1E)
-val LightGrayTextColor = Color(0xFF969799)
+val LightGrayColor = Color(0xFF969799)
 val SubHeaderTextColor = Color(0xFFA5A6A4)
 val GrayBorderColor = Color(0x261F1F1E)
 val PriceContainerColor = Color(0xFFE9F6FB)
