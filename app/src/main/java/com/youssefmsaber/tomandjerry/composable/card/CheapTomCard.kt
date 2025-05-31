@@ -41,14 +41,13 @@ fun CheapTomCard(
     cheapTom: CheapTom,
     modifier: Modifier = Modifier
 ) {
-
     Box(
         modifier
             .height(236.dp)
             .width(160.dp)
     ) {
         Box(
-            modifier
+            Modifier
                 .height(220.dp)
                 .fillMaxWidth()
                 .align(Alignment.BottomCenter)
@@ -58,17 +57,18 @@ fun CheapTomCard(
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
 
-            modifier = modifier.padding(start = Padding8, end = Padding8, bottom = Padding8)
+            modifier = Modifier.padding(start = Padding8, end = Padding8, bottom = Padding8)
         ) {
             TomDetails(cheapTom)
             Spacer(modifier = Modifier.weight(1f))
             Row {
                 PriceCard(
                     oldPrice = cheapTom.oldPrice,
-                    newPrice = cheapTom.newPrice
+                    newPrice = cheapTom.newPrice,
+                    modifier = Modifier.weight(3f)
                 )
                 HorizontalSpacer8()
-                CartButton()
+                CartButton(modifier = Modifier.weight(1f))
             }
         }
     }

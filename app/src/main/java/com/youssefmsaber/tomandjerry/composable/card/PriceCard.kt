@@ -2,6 +2,8 @@ package com.youssefmsaber.tomandjerry.composable.card
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -68,10 +70,14 @@ fun PriceCard(
             contentColor = PrimaryColor
         ),
         shape = RoundedCornerShape(Radius8),
-        modifier = modifier.height(30.dp)
+        modifier = modifier
+            .height(30.dp)
+            .fillMaxWidth()
     ) {
         Row(
-            modifier = modifier.padding(Padding8),
+            modifier = Modifier
+                .padding(Padding8)
+                .fillMaxSize(),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
@@ -79,7 +85,7 @@ fun PriceCard(
                 painter = painterResource(R.drawable.money_bag_icon),
                 contentDescription = "Price icon",
                 tint = PrimaryColor,
-                modifier = modifier.size(16.dp)
+                modifier = Modifier.size(16.dp)
             )
             HorizontalSpacer4()
             Text(price)
@@ -92,6 +98,6 @@ fun PriceCard(
 fun PriceCardPreview() {
     PriceCard(
         oldPrice = 0.toString(),
-        newPrice = "2"
+        newPrice = ""
     )
 }
