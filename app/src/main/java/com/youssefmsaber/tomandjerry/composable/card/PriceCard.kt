@@ -95,7 +95,7 @@ fun PriceCard(
 
 @Preview
 @Composable
-fun PriceCardPreview() {
+private fun PriceCardPreview() {
     PriceCard(
         oldPrice = 0.toString(),
         newPrice = ""

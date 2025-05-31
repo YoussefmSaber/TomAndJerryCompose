@@ -68,6 +68,6 @@ fun SearchCard(
 
 @Preview
 @Composable
-fun SearchCardPreview() {
+private fun SearchCardPreview() {
     SearchCard()
 }

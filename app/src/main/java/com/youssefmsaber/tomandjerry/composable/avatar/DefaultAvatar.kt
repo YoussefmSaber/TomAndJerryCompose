@@ -25,6 +25,6 @@ fun DefaultAvatar(
 
 @Preview
 @Composable
-fun DefaultAvatarPreview() {
+private fun DefaultAvatarPreview() {
     DefaultAvatar(image = painterResource(R.drawable.profile_image))
 }

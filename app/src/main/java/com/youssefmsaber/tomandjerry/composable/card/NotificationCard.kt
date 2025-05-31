@@ -57,6 +57,6 @@ fun NotificationCard(
 
 @Preview(showBackground = true)
 @Composable
-fun NotificationCardPreview() {
+private fun NotificationCardPreview() {
     NotificationCard(3)
 }

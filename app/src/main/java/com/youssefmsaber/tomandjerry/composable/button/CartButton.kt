@@ -43,6 +43,6 @@ fun CartButton(
 
 @Preview(showBackground = true)
 @Composable
-fun CartButtonPreview() {
+private fun CartButtonPreview() {
     CartButton()
 }

@@ -147,6 +147,6 @@ private fun TomImage(
 
 @Preview
 @Composable
-fun PromotionCardPreview() {
+private fun PromotionCardPreview() {
     PromotionCard()
 }

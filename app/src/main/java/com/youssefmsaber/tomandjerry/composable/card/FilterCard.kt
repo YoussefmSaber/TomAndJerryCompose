@@ -38,6 +38,6 @@ fun FilterCard(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-fun FilterCardPreview() {
+private fun FilterCardPreview() {
     FilterCard()
 }
