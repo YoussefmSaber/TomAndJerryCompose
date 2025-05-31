@@ -92,7 +92,6 @@ fun PromotionCard(
             }
         }
 
-
         TomImage(modifier.constrainAs(image) {
             top.linkTo(parent.top)
             end.linkTo(parent.end)
