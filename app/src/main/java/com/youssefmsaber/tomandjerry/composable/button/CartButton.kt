@@ -34,7 +34,7 @@ fun CartButton(
             painter = painterResource(R.drawable.add_to_cart_icon),
             contentDescription = "Add to cart icon",
             tint = PrimaryColor,
-            modifier = modifier
+            modifier = Modifier
                 .padding(Padding8)
                 .fillMaxSize()
         )

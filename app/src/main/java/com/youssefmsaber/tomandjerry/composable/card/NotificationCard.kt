@@ -33,7 +33,7 @@ fun NotificationCard(
             Badge(
                 containerColor = PrimaryColor,
                 contentColor = Color.White,
-                modifier = modifier.offset(y = OffsetNegative4)
+                modifier = Modifier.offset(y = OffsetNegative4)
             ) {
                 Text(numberOfNotifications.toString())
             }
@@ -49,7 +49,7 @@ fun NotificationCard(
             Icon(
                 painter = painterResource(R.drawable.notification_icon),
                 contentDescription = "Notification Icon",
-                modifier = modifier.padding(Padding8),
+                modifier = Modifier.padding(Padding8),
             )
         }
     }

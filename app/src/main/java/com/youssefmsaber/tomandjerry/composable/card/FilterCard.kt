@@ -29,7 +29,7 @@ fun FilterCard(modifier: Modifier = Modifier) {
         Image(
             painter = painterResource(R.drawable.filter_horizontal_icon),
             contentDescription = "Filter Icon",
-            modifier
+            Modifier
                 .padding(Padding12)
                 .fillMaxSize()
         )
