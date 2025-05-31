@@ -2,8 +2,7 @@ package com.youssefmsaber.tomandjerry.composable.card
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -37,7 +36,6 @@ fun SearchCard(
         colors = CardDefaults.cardColors(containerColor = Color.White),
         shape = RoundedCornerShape(Radius12),
         modifier = modifier
-            .fillMaxWidth()
             .height(48.dp),
     ) {
         Row(
@@ -45,7 +43,7 @@ fun SearchCard(
             horizontalArrangement = Arrangement.Start,
             modifier = modifier
                 .padding(Padding8)
-                .fillMaxSize()
+                .fillMaxHeight()
         ) {
             Icon(
                 painter = painterResource(R.drawable.search_normal_icon),

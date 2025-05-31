@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -42,9 +41,7 @@ fun CheapTomCard(
     modifier: Modifier = Modifier
 ) {
     Box(
-        modifier
-            .height(236.dp)
-            .width(160.dp)
+        modifier.width(160.dp)
     ) {
         Box(
             Modifier
@@ -60,15 +57,15 @@ fun CheapTomCard(
             modifier = Modifier.padding(start = Padding8, end = Padding8, bottom = Padding8)
         ) {
             TomDetails(cheapTom)
-            Spacer(modifier = Modifier.weight(1f))
+            VerticalSpacer8()
             Row {
                 PriceCard(
                     oldPrice = cheapTom.oldPrice,
                     newPrice = cheapTom.newPrice,
-                    modifier = Modifier.weight(3f)
+                    modifier = Modifier.weight(1f)
                 )
                 HorizontalSpacer8()
-                CartButton(modifier = Modifier.weight(1f))
+                CartButton()
             }
         }
     }
@@ -105,8 +102,10 @@ private fun TomDetails(
                 fontSize = 12.sp,
                 fontFamily = IBM_Plex,
                 fontWeight = FontWeight.Normal,
-                textAlign = TextAlign.Center
-            )
+                textAlign = TextAlign.Center,
+            ),
+            minLines = 3,
+            maxLines = 3
         )
     }
 }

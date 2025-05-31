@@ -6,6 +6,8 @@ val Padding4 = 4.dp
 val Padding8 = 8.dp
 val Padding12 = 12.dp
 val Padding16 = 16.dp
+val Padding24 = 24.dp
+val Padding32 = 32.dp
 
 val StrokeWidth1 = 1.dp
 val StrokeWidth2 = 2.dp
