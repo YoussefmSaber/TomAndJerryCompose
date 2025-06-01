@@ -2,7 +2,6 @@ package com.youssefmsaber.tomandjerry.composable.card
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -27,12 +26,12 @@ import com.youssefmsaber.tomandjerry.R
 import com.youssefmsaber.tomandjerry.composable.spacer.HorizontalSpacer4
 import com.youssefmsaber.tomandjerry.ui.theme.IBM_Plex
 import com.youssefmsaber.tomandjerry.ui.theme.Padding8
-import com.youssefmsaber.tomandjerry.ui.theme.PriceContainerColor
 import com.youssefmsaber.tomandjerry.ui.theme.PrimaryColor
 import com.youssefmsaber.tomandjerry.ui.theme.Radius8
+import com.youssefmsaber.tomandjerry.ui.theme.SecondPriceContainerColor
 
 @Composable
-fun PriceCard(
+fun MealPriceCard(
     oldPrice: String,
     newPrice: String,
     modifier: Modifier = Modifier,
@@ -65,7 +64,7 @@ fun PriceCard(
 
     Card(
         colors = CardDefaults.cardColors(
-            containerColor = PriceContainerColor,
+            containerColor = SecondPriceContainerColor,
             contentColor = PrimaryColor
         ),
         shape = RoundedCornerShape(Radius8),
@@ -75,8 +74,7 @@ fun PriceCard(
     ) {
         Row(
             modifier = Modifier
-                .padding(Padding8)
-                .fillMaxWidth(),
+                .padding(Padding8),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
@@ -94,8 +92,8 @@ fun PriceCard(
 
 @Preview
 @Composable
-private fun PriceCardPreview() {
-    PriceCard(
+private fun MealPriceCardPreview() {
+    MealPriceCard(
         oldPrice = 0.toString(),
         newPrice = ""
     )
