@@ -2,8 +2,6 @@ package com.youssefmsaber.tomandjerry.composable.card
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -15,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -36,7 +35,8 @@ import com.youssefmsaber.tomandjerry.ui.theme.Radius8
 fun PriceCard(
     oldPrice: String,
     newPrice: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    color : Color = PriceContainerColor
 ) {
     val price = buildAnnotatedString {
         withStyle(
@@ -66,18 +66,16 @@ fun PriceCard(
 
     Card(
         colors = CardDefaults.cardColors(
-            containerColor = PriceContainerColor,
+            containerColor = color,
             contentColor = PrimaryColor
         ),
         shape = RoundedCornerShape(Radius8),
         modifier = modifier
             .height(30.dp)
-            .fillMaxWidth()
     ) {
         Row(
             modifier = Modifier
-                .padding(Padding8)
-                .fillMaxSize(),
+                .padding(Padding8),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
