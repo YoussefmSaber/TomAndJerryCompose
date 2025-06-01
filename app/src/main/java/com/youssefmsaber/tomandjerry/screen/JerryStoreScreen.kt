@@ -69,7 +69,7 @@ fun JerryStoreScreen() {
                 VerticalSpacer24()
 
                 SectionHeader()
-                VerticalSpacer16()
+                VerticalSpacer12()
             }
 
             // The Grid Section
