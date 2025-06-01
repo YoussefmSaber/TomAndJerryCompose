@@ -34,6 +34,7 @@ import com.youssefmsaber.tomandjerry.composable.spacer.HorizontalSpacer8
 import com.youssefmsaber.tomandjerry.composable.spacer.VerticalSpacer12
 import com.youssefmsaber.tomandjerry.composable.spacer.VerticalSpacer16
 import com.youssefmsaber.tomandjerry.composable.spacer.VerticalSpacer24
+import com.youssefmsaber.tomandjerry.composable.spacer.VerticalSpacer8
 import com.youssefmsaber.tomandjerry.data.cheapTomItems
 import com.youssefmsaber.tomandjerry.ui.theme.BackgroundColor
 import com.youssefmsaber.tomandjerry.ui.theme.DarkGrayTextColor
@@ -57,18 +58,16 @@ fun JerryStoreScreen() {
             ),
         ) {
             item {
+                VerticalSpacer8()
                 HeaderSection()
                 VerticalSpacer12()
-            }
-            item {
+
                 SearchAndFilterSection()
                 VerticalSpacer24()
-            }
-            item {
+
                 PromotionCard()
                 VerticalSpacer24()
-            }
-            item {
+
                 SectionHeader()
                 VerticalSpacer16()
             }
@@ -87,6 +86,7 @@ fun JerryStoreScreen() {
                         CheapTomCard(it)
                     }
                 }
+                VerticalSpacer16()
             }
         }
     }

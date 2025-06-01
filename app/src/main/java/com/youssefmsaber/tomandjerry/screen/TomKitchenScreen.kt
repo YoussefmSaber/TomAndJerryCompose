@@ -34,8 +34,8 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.youssefmsaber.tomandjerry.R
 import com.youssefmsaber.tomandjerry.composable.card.DetailsCard
+import com.youssefmsaber.tomandjerry.composable.card.MealPriceCard
 import com.youssefmsaber.tomandjerry.composable.card.PreparationMethodCard
-import com.youssefmsaber.tomandjerry.composable.card.PriceCard
 import com.youssefmsaber.tomandjerry.composable.spacer.HorizontalSpacer8
 import com.youssefmsaber.tomandjerry.composable.spacer.VerticalSpacer12
 import com.youssefmsaber.tomandjerry.composable.spacer.VerticalSpacer16
@@ -55,7 +55,6 @@ import com.youssefmsaber.tomandjerry.ui.theme.Padding16
 import com.youssefmsaber.tomandjerry.ui.theme.Padding24
 import com.youssefmsaber.tomandjerry.ui.theme.Padding46
 import com.youssefmsaber.tomandjerry.ui.theme.Radius16
-import com.youssefmsaber.tomandjerry.ui.theme.SecondPriceContainerColor
 
 @Composable
 fun TomKitchenScreen() {
@@ -234,10 +233,9 @@ private fun TitleDetails() {
                 )
             )
             VerticalSpacer12()
-            PriceCard(
+            MealPriceCard(
                 oldPrice = "5",
                 newPrice = "",
-                color = SecondPriceContainerColor
             )
         }
         Image(
