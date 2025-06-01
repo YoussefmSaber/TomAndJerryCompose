@@ -1,10 +1,13 @@
 package com.youssefmsaber.tomandjerry.composable.header
 
 import androidx.compose.foundation.layout.Row
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -17,24 +20,30 @@ import com.youssefmsaber.tomandjerry.ui.theme.PrimaryColor
 
 @Composable
 fun ViewAllText() {
-    Row(
-        verticalAlignment = Alignment.CenterVertically
+    TextButton(
+        onClick = {},
+        colors = ButtonDefaults.textButtonColors(
+            containerColor = Color.Transparent,
+            contentColor = PrimaryColor
+        )
     ) {
-        Text(
-            "View all",
-            style = TextStyle(
-                color = PrimaryColor,
-                fontSize = 12.sp,
-                fontFamily = IBM_Plex,
-                fontWeight = FontWeight.Medium
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                "View all",
+                style = TextStyle(
+                    fontSize = 12.sp,
+                    fontFamily = IBM_Plex,
+                    fontWeight = FontWeight.Medium
+                )
             )
-        )
-        HorizontalSpacer4()
-        Icon(
-            painter = painterResource(R.drawable.arrow_right),
-            contentDescription = "View All Icon",
-            tint = PrimaryColor
-        )
+            HorizontalSpacer4()
+            Icon(
+                painter = painterResource(R.drawable.arrow_right),
+                contentDescription = "View All Icon",
+            )
+        }
     }
 }
 

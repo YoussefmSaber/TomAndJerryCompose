@@ -109,6 +109,7 @@ private fun HeaderSection() {
 private fun SearchAndFilterSection() {
     Row {
         SearchCard(modifier = Modifier.weight(1f))
+
         HorizontalSpacer8()
         FilterCard()
     }
