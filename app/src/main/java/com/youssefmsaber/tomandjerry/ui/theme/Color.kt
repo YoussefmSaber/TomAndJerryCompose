@@ -29,5 +29,6 @@ val OffWhiteTextColor = Color(0xCCFFFFFF)
 
 val ButtonColor = Color(0xFF226993)
 
+val LightWhite = Color(0x61FFFFFF)
 val VeryLightWhite = Color(0x0AFFFFFF)
 val LinearGradientTomPromotion = listOf(Color(0xff03446A), Color(0xFF0685D0))
