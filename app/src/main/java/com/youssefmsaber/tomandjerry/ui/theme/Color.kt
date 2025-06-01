@@ -32,3 +32,12 @@ val ButtonColor = Color(0xFF226993)
 val LightWhite = Color(0x61FFFFFF)
 val VeryLightWhite = Color(0x0AFFFFFF)
 val LinearGradientTomPromotion = listOf(Color(0xff03446A), Color(0xFF0685D0))
+
+val PrimaryGreen = Color(0xFF57AB0F)
+val SecondaryGreen = Color(0xFFDEEECD)
+
+val PrimaryPink = Color(0xFFF46983)
+val SecondaryPink = Color(0xFFF2D9E7)
+
+val PrimaryYellow = Color(0xFFFFBF1A)
+val SecondaryYellow = Color(0xFFFAEDCF)
