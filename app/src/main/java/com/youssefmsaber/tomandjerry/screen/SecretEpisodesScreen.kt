@@ -74,7 +74,6 @@ fun SecretEpisodesScreen() {
                 item {
                     Column(
                         modifier = Modifier
-
                             .fillMaxSize()
                             .padding(vertical = Padding16)
                     ) {
@@ -84,33 +83,38 @@ fun SecretEpisodesScreen() {
                         VerticalSpacer12()
                         MostWatchedSection()
                         VerticalSpacer24()
-                        Column(
-                            horizontalAlignment = Alignment.Start
-                        ) {
-                            Text(
-                                "Popular character",
-                                style = TextStyle(
-                                    color = DarkGrayColor,
-                                    fontSize = 20.sp,
-                                    fontFamily = ROBOTO,
-                                    fontWeight = FontWeight.SemiBold,
-                                    lineHeight = 20.sp,
-                                    letterSpacing = (0.25).sp
-                                ),
-                                modifier = Modifier.padding(start = Padding16)
-                            )
-                            VerticalSpacer12()
-                            LazyRow(
-                                horizontalArrangement = Arrangement.spacedBy(Padding8),
-                                contentPadding = PaddingValues(horizontal = Padding16)
-                            ) {
-                                items(popularCharacters) {
-                                    PopularCharacterCard(it)
-                                }
-                            }
-                        }
+                        PopularCharacterSection()
                     }
                 }
+            }
+        }
+    }
+}
+
+@Composable
+private fun PopularCharacterSection() {
+    Column(
+        horizontalAlignment = Alignment.Start
+    ) {
+        Text(
+            "Popular character",
+            style = TextStyle(
+                color = DarkGrayColor,
+                fontSize = 20.sp,
+                fontFamily = ROBOTO,
+                fontWeight = FontWeight.SemiBold,
+                lineHeight = 20.sp,
+                letterSpacing = (0.25).sp
+            ),
+            modifier = Modifier.padding(start = Padding16)
+        )
+        VerticalSpacer12()
+        LazyRow(
+            horizontalArrangement = Arrangement.spacedBy(Padding8),
+            contentPadding = PaddingValues(horizontal = Padding16)
+        ) {
+            items(popularCharacters) {
+                PopularCharacterCard(it)
             }
         }
     }
@@ -142,7 +146,6 @@ private fun MostWatchedSection() {
         }
     }
 }
-
 
 @Composable
 private fun TomAndJerrySection() {
