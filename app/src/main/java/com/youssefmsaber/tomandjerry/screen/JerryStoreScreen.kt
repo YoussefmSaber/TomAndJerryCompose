@@ -72,7 +72,6 @@ fun JerryStoreScreen() {
                 VerticalSpacer12()
             }
 
-            // The Grid Section
             item {
                 LazyVerticalGrid(
                     columns = GridCells.Adaptive(160.dp),
