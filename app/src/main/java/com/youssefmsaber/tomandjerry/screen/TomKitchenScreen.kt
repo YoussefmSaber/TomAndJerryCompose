@@ -6,13 +6,12 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
@@ -28,7 +27,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.constraintlayout.compose.ConstraintLayout
 import com.youssefmsaber.tomandjerry.R
 import com.youssefmsaber.tomandjerry.composable.button.AddToCartButton
 import com.youssefmsaber.tomandjerry.composable.card.DetailsCard
@@ -50,65 +48,55 @@ import com.youssefmsaber.tomandjerry.ui.theme.LightBLueBackgroundColor
 import com.youssefmsaber.tomandjerry.ui.theme.LighterDarkGrayColor
 import com.youssefmsaber.tomandjerry.ui.theme.Padding16
 import com.youssefmsaber.tomandjerry.ui.theme.Padding24
-import com.youssefmsaber.tomandjerry.ui.theme.Padding46
 import com.youssefmsaber.tomandjerry.ui.theme.Radius16
 
 @Composable
 fun TomKitchenScreen() {
-    Scaffold { innerPadding ->
-        ConstraintLayout(
+    Scaffold(
+        bottomBar = {
+            BottomBar()
+        }
+    ) { innerPadding ->
+        LazyColumn (
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
+                .background(DetailsBackgroundColor)
                 .clipToBounds()
-                .background(LightBLueBackgroundColor)
         ) {
-            val (backgroundImage, content, bottomBar, pasta, tags) = createRefs()
-            Image(
-                painter = painterResource(R.drawable.ellipse_3),
-                contentDescription = "Background Image",
-                modifier = Modifier
-                    .constrainAs(backgroundImage) {
-                        top.linkTo(parent.top, margin = -Padding16)
-                        start.linkTo(parent.start)
+            item{
+                Box(
+                    modifier = Modifier.fillMaxSize()
+                        .background(LightBLueBackgroundColor)
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ellipse_3),
+                        contentDescription = "Background Image",
+                        modifier = Modifier.align(Alignment.TopStart)
+                    )
+                    Column(
+                        modifier = Modifier
+                            .align(Alignment.TopStart)
+                            .fillMaxSize()
+                    ) {
+                        VerticalSpacer46()
+                        MealTags()
+                        VerticalSpacer24()
+                        Details(
+                            modifier = Modifier
+                                .fillMaxSize()
+                        )
+                        Spacer(Modifier.weight(1f, fill = true))
                     }
-            )
-            Column(
-                modifier = Modifier
-                    .padding(horizontal = Padding16)
-                    .constrainAs(tags) {
-                        top.linkTo(parent.top)
-                        start.linkTo(parent.start)
-                    }
-            ) {
-                VerticalSpacer46()
-                MealTags()
+                    Image(
+                        painter = painterResource(R.drawable.pasta),
+                        contentDescription = "Pasta",
+                        modifier = Modifier
+                            .padding(horizontal = Padding24, vertical = Padding16)
+                            .align(Alignment.TopEnd)
+                    )
+                }
             }
-            Details(
-                modifier = Modifier
-                    .constrainAs(content) {
-                        start.linkTo(parent.start)
-                        end.linkTo(parent.end)
-                        top.linkTo(tags.bottom, margin = Padding46)
-                    }
-            )
-            Image(
-                painter = painterResource(R.drawable.pasta),
-                contentDescription = "Pasta",
-                modifier = Modifier
-                    .padding(horizontal = Padding24, vertical = Padding16)
-                    .constrainAs(pasta) {
-                        top.linkTo(parent.top)
-                        end.linkTo(parent.end)
-                    }
-            )
-            BottomBar(
-                modifier = Modifier
-                    .constrainAs(bottomBar) {
-                        bottom.linkTo(parent.bottom)
-                        start.linkTo(parent.start)
-                        end.linkTo(parent.end)
-                    })
         }
     }
 }
@@ -122,13 +110,12 @@ private fun Details(modifier: Modifier = Modifier) {
                 DetailsBackgroundColor,
                 shape = RoundedCornerShape(topStart = Radius16, topEnd = Radius16)
             )
-            .fillMaxHeight()
+            .fillMaxSize()
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .padding(horizontal = Padding16)
-                .fillMaxWidth()
         ) {
             TitleDetails()
             VerticalSpacer16()
@@ -143,22 +130,20 @@ private fun Details(modifier: Modifier = Modifier) {
 
 @Composable
 private fun PreparationSection() {
-    LazyColumn {
-        item {
-            Text(
-                "Preparation method",
-                style = TextStyle(
-                    color = DarkGrayColor,
-                    fontSize = 18.sp,
-                    fontFamily = IBM_Plex,
-                    fontWeight = FontWeight.Medium,
-                    lineHeight = 16.sp,
-                    letterSpacing = (0.5).sp
-                )
+    Column {
+        Text(
+            "Preparation method",
+            style = TextStyle(
+                color = DarkGrayColor,
+                fontSize = 18.sp,
+                fontFamily = IBM_Plex,
+                fontWeight = FontWeight.Medium,
+                lineHeight = 16.sp,
+                letterSpacing = (0.5).sp
             )
-            VerticalSpacer8()
-        }
-        items(preparationItems) {
+        )
+        VerticalSpacer8()
+        preparationItems.forEach {
             PreparationMethodCard(it)
             VerticalSpacer8()
         }
@@ -258,9 +243,10 @@ private fun BottomBar(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun MealTags() {
+private fun MealTags(modifier: Modifier = Modifier) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = modifier.padding(Padding16)
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Image(
@@ -300,7 +286,13 @@ private fun MealTags() {
     }
 }
 
-@Preview(showSystemUi = true)
+@Preview(name = "Default", showSystemUi = true)
+@Preview(
+    name = "Huawei Y9 Prime 2019",
+    showSystemUi = true,
+    widthDp = 442,
+    heightDp = 958
+)
 @Composable
 fun TomKitchenScreenPreview() {
     TomKitchenScreen()
