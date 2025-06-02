@@ -3,13 +3,14 @@ package com.youssefmsaber.tomandjerry.screen
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -39,7 +40,6 @@ import com.youssefmsaber.tomandjerry.composable.card.ProfileCard
 import com.youssefmsaber.tomandjerry.composable.card.StatsCard
 import com.youssefmsaber.tomandjerry.composable.spacer.VerticalSpacer12
 import com.youssefmsaber.tomandjerry.composable.spacer.VerticalSpacer16
-import com.youssefmsaber.tomandjerry.composable.spacer.VerticalSpacer24
 import com.youssefmsaber.tomandjerry.composable.spacer.VerticalSpacer8
 import com.youssefmsaber.tomandjerry.data.favoriteFoodsItems
 import com.youssefmsaber.tomandjerry.data.statsItems
@@ -85,7 +85,8 @@ fun TomAccountScreen() {
                     end.linkTo(parent.end)
                 }
             )
-            Box(
+            LazyColumn(
+                horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .constrainAs(content) {
                         top.linkTo(account.bottom, margin = Padding4)
@@ -95,11 +96,8 @@ fun TomAccountScreen() {
                     .background(BackgroundColor, shape = RoundedCornerShape(Radius20))
                     .fillMaxHeight()
             ) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                ) {
+                item {
+
                     VerticalSpacer16()
                     LazyVerticalGrid(
                         columns = GridCells.Adaptive(160.dp),
@@ -108,11 +106,14 @@ fun TomAccountScreen() {
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(Padding16)
+                            .heightIn(max = 1000.dp)
                     ) {
                         items(statsItems) {
                             StatsCard(it)
                         }
                     }
+                }
+                item {
                     SettingsSection("Tom settings", tomSettingsItems)
                     VerticalSpacer12()
                     HorizontalDivider(
@@ -121,7 +122,7 @@ fun TomAccountScreen() {
                     )
                     VerticalSpacer12()
                     SettingsSection("Favorite foods", favoriteFoodsItems)
-                    VerticalSpacer24()
+                    VerticalSpacer16()
                     Text(
                         "v.TomBeta",
                         style = TextStyle(
@@ -133,7 +134,6 @@ fun TomAccountScreen() {
                     )
                 }
             }
-
         }
     }
 }
