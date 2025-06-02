@@ -45,3 +45,7 @@ val SecondaryPink = Color(0xFFF2D9E7)
 
 val PrimaryYellow = Color(0xFFFFBF1A)
 val SecondaryYellow = Color(0xFFFAEDCF)
+
+val LittleMouseColor = Color(0xFFC5E7FC)
+val JerryColor = Color(0xFFFCC5E4)
+val TomColor = Color(0xFFFCF2C5)
