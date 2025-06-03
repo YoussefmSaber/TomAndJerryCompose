@@ -14,18 +14,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.BaselineShift
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.youssefmsaber.tomandjerry.R
 import com.youssefmsaber.tomandjerry.composable.spacer.HorizontalSpacer4
 import com.youssefmsaber.tomandjerry.ui.theme.IBM_Plex
+import com.youssefmsaber.tomandjerry.ui.theme.Padding2
 import com.youssefmsaber.tomandjerry.ui.theme.Padding8
 import com.youssefmsaber.tomandjerry.ui.theme.PrimaryColor
 import com.youssefmsaber.tomandjerry.ui.theme.Radius8
@@ -37,31 +37,6 @@ fun MealPriceCard(
     newPrice: String,
     modifier: Modifier = Modifier,
 ) {
-    val price = buildAnnotatedString {
-        withStyle(
-            style = SpanStyle(
-                fontSize = 12.sp,
-                fontFamily = IBM_Plex,
-                fontWeight = FontWeight.Medium
-            )
-        ) {
-            if (newPrice.isNotBlank()) {
-                withStyle(
-                    style = SpanStyle(
-                        textDecoration = TextDecoration.LineThrough,
-                    )
-                ) {
-                    append(oldPrice)
-                }
-                append(" ")
-                append(newPrice)
-            } else {
-                append(oldPrice)
-            }
-            append(" ")
-            append(stringResource(R.string.cheeses))
-        }
-    }
 
     Card(
         colors = CardDefaults.cardColors(
@@ -69,9 +44,7 @@ fun MealPriceCard(
             contentColor = PrimaryColor
         ),
         shape = RoundedCornerShape(Radius8),
-        modifier = modifier
-
-            .height(30.dp)
+        modifier = modifier.height(32.dp)
     ) {
         Row(
             modifier = Modifier
@@ -85,10 +58,34 @@ fun MealPriceCard(
                 tint = PrimaryColor,
                 modifier = Modifier.size(16.dp)
             )
-            HorizontalSpacer4()
-            Text(price)
+            Row(modifier = Modifier.padding(bottom = Padding2)) {
+                HorizontalSpacer4()
+                if (newPrice.isNotBlank()) {
+                    PriceText(oldPrice, true)
+                    PriceText(" $newPrice ")
+                } else {
+                    PriceText(" $oldPrice ")
+                }
+                PriceText("cheeses")
+            }
         }
     }
+}
+
+
+@Composable
+private fun PriceText(value: String, isDashed: Boolean = false) {
+    Text(
+        value,
+        style = TextStyle(
+            fontSize = 12.sp,
+            fontFamily = IBM_Plex,
+            fontWeight = FontWeight.Medium,
+            textDecoration = if (isDashed) TextDecoration.LineThrough else null,
+            baselineShift = BaselineShift.Superscript,
+            textAlign = TextAlign.Center
+        ),
+    )
 }
 
 @Preview

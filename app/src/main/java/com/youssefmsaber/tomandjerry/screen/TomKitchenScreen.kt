@@ -288,13 +288,7 @@ private fun MealTags(modifier: Modifier = Modifier) {
 }
 
 @Preview(name = "Default", showSystemUi = true)
-@Preview(
-    name = "Huawei Y9 Prime 2019",
-    showSystemUi = true,
-    widthDp = 442,
-    heightDp = 958
-)
 @Composable
-fun TomKitchenScreenPreview() {
+private fun TomKitchenScreenPreview() {
     TomKitchenScreen()
 }

@@ -52,6 +52,7 @@ fun NotificationCard(
                 painter = painterResource(R.drawable.notification_icon),
                 contentDescription = "Notification Icon",
                 modifier = Modifier.padding(Padding8),
+                tint = Color.Black
             )
         }
     }

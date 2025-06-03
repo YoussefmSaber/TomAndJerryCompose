@@ -230,6 +230,6 @@ private fun SettingsSection(title: String, settings: List<ProfileItem>) {
 
 @Preview(showSystemUi = true)
 @Composable
-fun TomAccountScreenPreview() {
+private fun TomAccountScreenPreview() {
     TomAccountScreen()
 }

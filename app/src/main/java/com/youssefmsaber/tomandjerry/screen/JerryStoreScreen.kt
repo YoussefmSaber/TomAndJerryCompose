@@ -1,11 +1,12 @@
 package com.youssefmsaber.tomandjerry.screen
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -48,16 +49,13 @@ import com.youssefmsaber.tomandjerry.ui.theme.Padding8
 fun JerryStoreScreen() {
     val cheapTomItems = cheapTomItems()
     Scaffold(
-        containerColor = BackgroundColor,
     ) { innerPadding ->
         LazyColumn(
-            contentPadding = PaddingValues(
-                top = innerPadding.calculateTopPadding(),
-                bottom = innerPadding.calculateBottomPadding(),
-                start = Padding16,
-                end = Padding16
-            ),
-        ) {
+            modifier = Modifier
+                .padding(innerPadding)
+                .background(BackgroundColor)
+                .padding(horizontal = Padding16),
+            ) {
             item {
                 VerticalSpacer8()
                 HeaderSection()
