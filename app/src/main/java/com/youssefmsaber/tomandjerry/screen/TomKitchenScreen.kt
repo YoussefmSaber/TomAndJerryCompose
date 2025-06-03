@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -47,6 +48,7 @@ import com.youssefmsaber.tomandjerry.ui.theme.LightBLueBackgroundColor
 import com.youssefmsaber.tomandjerry.ui.theme.LighterDarkGrayColor
 import com.youssefmsaber.tomandjerry.ui.theme.Padding16
 import com.youssefmsaber.tomandjerry.ui.theme.Padding24
+import com.youssefmsaber.tomandjerry.ui.theme.Padding8
 import com.youssefmsaber.tomandjerry.ui.theme.Radius16
 
 @Composable
@@ -65,7 +67,8 @@ fun TomKitchenScreen() {
         ) {
             item{
                 Box(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier
+                        .fillMaxSize()
                         .background(LightBLueBackgroundColor)
                 ) {
                     Image(
@@ -130,7 +133,7 @@ private fun Details(modifier: Modifier = Modifier) {
 private fun PreparationSection() {
     Column {
         Text(
-            "Preparation method",
+            stringResource(R.string.preparation_method),
             style = TextStyle(
                 color = DarkGrayColor,
                 fontSize = 18.sp,
@@ -154,7 +157,7 @@ private fun InformationSection() {
         verticalArrangement = Arrangement.Center,
     ) {
         Text(
-            "Details",
+            stringResource(R.string.details),
             style = TextStyle(
                 color = DarkGrayColor,
                 fontSize = 18.sp,
@@ -166,7 +169,7 @@ private fun InformationSection() {
         )
         VerticalSpacer8()
         Row(
-            horizontalArrangement = Arrangement.SpaceBetween,
+            horizontalArrangement = Arrangement.spacedBy(Padding8),
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.fillMaxWidth()
         ) {
@@ -180,7 +183,7 @@ private fun InformationSection() {
 @Composable
 private fun MealDescription() {
     Text(
-        "Pasta cooked with a charger cable and sprinkled with questionable cheese. Make sure to unplug it before eating (or not, you decide).",
+        stringResource(R.string.pasta_cooked_with_a_charger_cable_and_sprinkled_with_questionable_cheese_make_sure_to_unplug_it_before_eating_or_not_you_decide),
         style = TextStyle(
             color = LighterDarkGrayColor,
             fontSize = 14.sp,
@@ -202,7 +205,7 @@ private fun TitleDetails() {
     ) {
         Column {
             Text(
-                "Electric Tom pasta",
+                stringResource(R.string.electric_tom_pasta),
                 style = TextStyle(
                     fontSize = 20.sp,
                     fontFamily = IBM_Plex,
@@ -254,7 +257,7 @@ private fun MealTags(modifier: Modifier = Modifier) {
             )
             HorizontalSpacer8()
             Text(
-                "High tension",
+                stringResource(R.string.high_tension),
                 style = TextStyle(
                     color = Color.White,
                     fontSize = 16.sp,
@@ -272,7 +275,7 @@ private fun MealTags(modifier: Modifier = Modifier) {
             )
             HorizontalSpacer8()
             Text(
-                "Shocking foods",
+                stringResource(R.string.shocking_foods),
                 style = TextStyle(
                     color = Color.White,
                     fontSize = 16.sp,

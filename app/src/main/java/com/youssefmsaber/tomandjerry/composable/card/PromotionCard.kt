@@ -6,7 +6,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,6 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
@@ -24,12 +24,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.constraintlayout.compose.ConstraintLayout
 import com.youssefmsaber.tomandjerry.R
 import com.youssefmsaber.tomandjerry.composable.spacer.VerticalSpacer8
 import com.youssefmsaber.tomandjerry.ui.theme.IBM_Plex
@@ -44,37 +44,28 @@ import com.youssefmsaber.tomandjerry.ui.theme.VeryLightWhite
 fun PromotionCard(
     modifier: Modifier = Modifier
 ) {
-    ConstraintLayout {
-        val (image, card) = createRefs()
+    Box(modifier) {
 
-        BoxWithConstraints(
+        Box(
             modifier = modifier
                 .fillMaxWidth()
                 .height(92.dp)
                 .graphicsLayer(compositingStrategy = CompositingStrategy.Offscreen)
                 .clip(RoundedCornerShape(16.dp))
-                .constrainAs(card) {
-                    end.linkTo(parent.end)
-                    start.linkTo(parent.start)
-                    bottom.linkTo(parent.bottom)
-                }
+                .align(Alignment.BottomCenter)
         ) {
-            val widthPx = constraints.maxWidth.toFloat()
-            val heightPx = constraints.maxHeight.toFloat()
 
             Box(
-                modifier = modifier
+                modifier = Modifier
+                    .fillMaxSize()
                     .background(
                         brush = Brush.linearGradient(
                             colors = LinearGradientTomPromotion,
                             start = Offset.Zero,
-                            end = Offset(widthPx, heightPx)
                         )
                     )
-                    .fillMaxSize()
             ) {
-
-                PromotionText(modifier)
+                PromotionText(Modifier) // pass new Modifier
 
                 Canvas(modifier = Modifier.matchParentSize()) {
                     drawCircle(
@@ -92,11 +83,7 @@ fun PromotionCard(
             }
         }
 
-        TomImage(modifier.constrainAs(image) {
-            top.linkTo(parent.top)
-            end.linkTo(parent.end)
-            bottom.linkTo(parent.bottom)
-        })
+        TomImage(Modifier.align(Alignment.BottomEnd))
     }
 }
 
@@ -111,7 +98,7 @@ private fun PromotionText(
             .padding(Padding12)
     ) {
         Text(
-            "By 1 Tom and get 2 for free",
+            stringResource(R.string.by_1_tom_and_get_2_for_free),
             style = TextStyle(
                 color = Color.White,
                 fontSize = 16.sp,
@@ -121,7 +108,7 @@ private fun PromotionText(
         )
         VerticalSpacer8()
         Text(
-            "Adopt Tom! (Free Fail-Free\n Guarantee)",
+            stringResource(R.string.adopt_tom_free_fail_free_guarantee),
             style = TextStyle(
                 color = OffWhiteTextColor,
                 fontSize = 12.sp,

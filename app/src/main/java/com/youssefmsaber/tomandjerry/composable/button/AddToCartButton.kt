@@ -15,12 +15,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.youssefmsaber.tomandjerry.R
 import com.youssefmsaber.tomandjerry.composable.spacer.HorizontalSpacer8
 import com.youssefmsaber.tomandjerry.ui.theme.ButtonColor
 import com.youssefmsaber.tomandjerry.ui.theme.IBM_Plex
@@ -43,7 +45,7 @@ fun AddToCartButton() {
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                "Add to cart",
+                stringResource(R.string.add_to_cart),
                 style = TextStyle(
                     color = Color.White,
                     fontSize = 16.sp,

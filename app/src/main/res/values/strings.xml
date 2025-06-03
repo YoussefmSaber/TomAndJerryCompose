@@ -1,4 +1,26 @@
 <resources>
     <string name="app_name">TomAndJerry</string>
     <string name="search_hint">Search about tom …</string>
+    <string name="which_tom_do_you_want_to_buy">Which Tom do you want to buy?</string>
+    <string name="hi">Hi, %1$s 👋🏻</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="cheeses">cheeses</string>
+    <string name="adopt_tom_free_fail_free_guarantee">Adopt Tom! (Free Fail-Free\n Guarantee)</string>
+    <string name="by_1_tom_and_get_2_for_free">By 1 Tom and get 2 for free</string>
+    <string name="view_all">View all</string>
+    <string name="cheap_tom_section">Cheap tom section</string>
+    <string name="popular_character">Popular character</string>
+    <string name="most_watched">Most watched</string>
+    <string name="deleted_episodes_of_tom_and_jerry">Deleted episodes of Tom and Jerry!</string>
+    <string name="scenes_that_were_canceled_for_mysterious_and_sometimes_embarrassing_reasons">Scenes that were canceled for... mysterious (and sometimes embarrassing) reasons.</string>
+    <string name="tom_settings">Tom settings</string>
+    <string name="favorite_foods">Favorite foods</string>
+    <string name="v_tombeta">v.TomBeta</string>
+    <string name="edit_foolishness">Edit foolishness</string>
+    <string name="preparation_method">Preparation method</string>
+    <string name="details">Details</string>
+    <string name="pasta_cooked_with_a_charger_cable_and_sprinkled_with_questionable_cheese_make_sure_to_unplug_it_before_eating_or_not_you_decide">Pasta cooked with a charger cable and sprinkled with questionable cheese. Make sure to unplug it before eating (or not, you decide).</string>
+    <string name="electric_tom_pasta">Electric Tom pasta</string>
+    <string name="high_tension">High tension</string>
+    <string name="shocking_foods">Shocking foods</string>
 </resources>

@@ -28,6 +28,7 @@ import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -114,17 +115,17 @@ fun TomAccountScreen() {
                     }
                 }
                 item {
-                    SettingsSection("Tom settings", tomSettingsItems)
+                    SettingsSection(stringResource(R.string.tom_settings), tomSettingsItems)
                     VerticalSpacer12()
                     HorizontalDivider(
                         modifier = Modifier.fillMaxWidth(),
                         color = Color(0x14001A1F)
                     )
                     VerticalSpacer12()
-                    SettingsSection("Favorite foods", favoriteFoodsItems)
+                    SettingsSection(stringResource(R.string.favorite_foods), favoriteFoodsItems)
                     VerticalSpacer16()
                     Text(
-                        "v.TomBeta",
+                        stringResource(R.string.v_tombeta),
                         style = TextStyle(
                             color = LighterDarkGrayColor,
                             fontSize = 12.sp,
@@ -181,7 +182,7 @@ private fun Account(modifier: Modifier = Modifier) {
             shape = CircleShape
         ) {
             Text(
-                "Edit foolishness",
+                stringResource(R.string.edit_foolishness),
                 style = TextStyle(
                     color = Color.White,
                     fontSize = 10.sp,

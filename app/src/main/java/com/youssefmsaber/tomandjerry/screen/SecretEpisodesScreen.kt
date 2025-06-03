@@ -1,5 +1,6 @@
 package com.youssefmsaber.tomandjerry.screen
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -26,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -51,6 +53,7 @@ import com.youssefmsaber.tomandjerry.ui.theme.Radius12
 import com.youssefmsaber.tomandjerry.ui.theme.VerticalGradientBackground
 import com.youssefmsaber.tomandjerry.ui.theme.VerticalGradientSearch
 
+@SuppressLint("UnusedBoxWithConstraintsScope")
 @Composable
 fun SecretEpisodesScreen() {
     Scaffold { innerPadding ->
@@ -97,7 +100,7 @@ private fun PopularCharacterSection() {
         horizontalAlignment = Alignment.Start
     ) {
         Text(
-            "Popular character",
+            stringResource(R.string.popular_character),
             style = TextStyle(
                 color = DarkGrayColor,
                 fontSize = 20.sp,
@@ -124,7 +127,7 @@ private fun PopularCharacterSection() {
 private fun MostWatchedSection() {
     Column {
         Text(
-            "Most watched",
+            stringResource(R.string.most_watched),
             style = TextStyle(
                 color = DarkGrayColor,
                 fontSize = 20.sp,
@@ -159,7 +162,7 @@ private fun TomAndJerrySection() {
             modifier = Modifier.weight(1f)
         ) {
             Text(
-                "Deleted episodes of Tom and Jerry!",
+                stringResource(R.string.deleted_episodes_of_tom_and_jerry),
                 style = TextStyle(
                     color = DarkGrayColor,
                     fontSize = 18.sp,
@@ -171,7 +174,7 @@ private fun TomAndJerrySection() {
             )
             VerticalSpacer12()
             Text(
-                "Scenes that were canceled for... mysterious (and sometimes embarrassing) reasons.",
+                stringResource(R.string.scenes_that_were_canceled_for_mysterious_and_sometimes_embarrassing_reasons),
                 style = TextStyle(
                     color = LighterDarkGrayColor,
                     fontSize = 14.sp,
