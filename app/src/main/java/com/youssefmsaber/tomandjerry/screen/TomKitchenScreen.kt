@@ -58,14 +58,14 @@ fun TomKitchenScreen() {
             BottomBar()
         }
     ) { innerPadding ->
-        LazyColumn (
+        LazyColumn(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
                 .background(DetailsBackgroundColor)
                 .clipToBounds()
         ) {
-            item{
+            item {
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
@@ -174,7 +174,12 @@ private fun InformationSection() {
             modifier = Modifier.fillMaxWidth()
         ) {
             detailsItems.forEach {
-                DetailsCard(it)
+                DetailsCard(
+                    it,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f)
+                )
             }
         }
     }
@@ -288,6 +293,7 @@ private fun MealTags(modifier: Modifier = Modifier) {
 }
 
 @Preview(name = "Default", showSystemUi = true)
+@Preview(device = "spec:width=360dp,height=800dp,dpi=240")
 @Composable
 private fun TomKitchenScreenPreview() {
     TomKitchenScreen()
